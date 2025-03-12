@@ -1,0 +1,14 @@
+{
+	"scripts": {
+	  "dev": "bottender dev",
+	  "start": "bottender start"
+	},
+	"dependencies": {
+		"bottender": "^1.5.5",
+		"node-wit": "^6.6.0"
+	},
+	"devDependencies": {
+		"@types/node": "^22.13.10",
+		"typescript": "^5.8.2"
+	}
+}
