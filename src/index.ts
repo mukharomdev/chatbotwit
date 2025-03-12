@@ -1,6 +1,6 @@
 import type {ContextApp} from 'chatbotwit'
 
-async function  App(context:ContextApp){
+async function  App(context:ContextApp):Promise<void>{
   await context.sendText('Hello, World!');
 };
 

@@ -2,7 +2,7 @@
     "version": "1.0.0",
     "main": "src/index.ts",
 	"scripts": {
-		"dev": "cd dist && bottender dev",
+		"dev": "bottender dev ",
 		"start": "bottender start"
 	},
 	"dependencies": {
