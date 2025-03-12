@@ -1,7 +1,9 @@
-{
+{	"name": "chatbotwit",
+    "version": "1.0.0",
+    "main": "src/index.ts",
 	"scripts": {
-	  "dev": "bottender dev",
-	  "start": "bottender start"
+		"dev": "cd dist && bottender dev",
+		"start": "bottender start"
 	},
 	"dependencies": {
 		"bottender": "^1.5.5",
@@ -9,6 +11,7 @@
 	},
 	"devDependencies": {
 		"@types/node": "^22.13.10",
+		"ts-node": "^10.9.2",
 		"typescript": "^5.8.2"
 	}
 }
