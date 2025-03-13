@@ -35,8 +35,6 @@ app.prepare().then(() => {
   });
 });
 
-export const config = {
-     runtime: 'edge',
-   };
+
 
 
