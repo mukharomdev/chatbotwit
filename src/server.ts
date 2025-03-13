@@ -21,7 +21,7 @@ app.prepare().then(() => {
     })
   );
 
-  server.get('/api', (req, res) => {
+  server.get('/', (req, res) => {
     res.json({ ok: true });
   });
 
