@@ -1,17 +1,19 @@
 const { bottender } = require('bottender');
-   const { createServer } = require('http');
 
-   const app = bottender({
-     dev: process.env.NODE_ENV !== 'production',
-   });
+const app = bottender();
+const { router } = app;
 
-   const handle = app.getRequestHandler();
+router.use(async (context) => {
+  if (context.event.isVerify) {
+    // Mengembalikan hub.challenge untuk verifikasi webhook
+    context.res.status(200).send(context.event.query['hub.challenge']);
+    return;
+  }
+  await context.sendText('Hello, World!');
+});
 
-   app.prepare().then(() => {
-     createServer((req, res) => {
-       handle(req, res);
-     }).listen(process.env.PORT || 3000, (err) => {
-       if (err) throw err;
-       console.log('> Ready on http://localhost:3000');
-     });
-   });
+const handle = app.getRequestHandler();
+
+module.exports = async (req, res) => {
+  await handle(req, res);
+};

@@ -1,0 +1,8 @@
+curl -X GET "https://chatbotwit.vercel.app/webhooks/messenger  ?hub.verify_token=yodharishang3129&hub.challenge=CHALLENGE_ACCEPTED&hub.mode=subscribe"
+
+
+pnpm dlx bottender messenger webhook set https://204e-2400-9800-5f0-4a9e-36fa-7478-7995-5552.ngrok-free.app/webhooks/messenger
+
+
+
+facebookplatform/1.0 (+http://developers.facebook.com)

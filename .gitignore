@@ -137,5 +137,8 @@ dist
 
 # deploy vercel
 
-vercel.json
+
 .vercel
+
+# update
+CURL
