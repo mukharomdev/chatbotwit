@@ -20,6 +20,10 @@ app.prepare().then(() => {
       },
     })
   );
+   // Serve favicon.png
+     server.get('/favicon.png', (req, res) => {
+         res.status(204).end();
+     });
    // Serve favicon.ico
      server.get('/favicon.ico', (req, res) => {
          res.status(204).end();
