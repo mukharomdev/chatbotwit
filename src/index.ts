@@ -5,7 +5,7 @@ async function  App(context:ContextApp):Promise<void>{
 try{
   await context.sendText('Hello, World!');
 } catch(error){
-alert("error",error);
+console.log("error",error);
 }
 };
 
