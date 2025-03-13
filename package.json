@@ -4,8 +4,8 @@
 	"main": "src/index.ts",
 	"scripts": {
 		"dev": "bottender dev ",
-		"start": "bottender start",
-  "build":"node ./api/index.js"
+		"start1": "bottender start",
+   		"start": "node api/index.js"
 	},
 	"dependencies": {
 		"bottender": "^1.5.5",

@@ -139,6 +139,6 @@ dist
 
 
 .vercel
-
+vercel.json
 # update
 CURL
