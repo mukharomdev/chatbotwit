@@ -7,26 +7,23 @@
 		"minify": "npx terser dist/server.js --output dist/server.min.js && npx terser dist/index.js --output dist/index.min.js",
 		"dev": "bottender dev ",
 		"start-local": "bottender start",
-		"start": "cross-env NODE_ENV=production node dist/server.js"
+		"start": "cross-env NODE_ENV=production node dist/server.min.js"
 	},
 	"dependencies": {
 		"body-parser": "^1.20.3",
 		"bottender": "^1.5.5",
 		"cross-env": "^7.0.3",
-		"dotenv": "^16.4.7",
 		"express": "^4.21.2",
 		"node-wit": "^6.6.0",
 		"terser": "^5.39.0"
 	},
 	"devDependencies": {
 		"@types/body-parser": "^1.19.5",
-		"@types/dotenv": "^8.2.3",
 		"@types/express": "^5.0.0",
 		"@types/node": "^22.13.10",
 		"@types/node-wit": "^6.1.0",
-		"@types/terser": "^3.12.0",
+		"dotenv": "^16.4.7",
 		"ngrok": "5.0.0-beta.2",
-		"ts-node": "^10.9.2",
 		"typescript": "^5.8.2",
 		"vercel": "^41.4.0"
 	}

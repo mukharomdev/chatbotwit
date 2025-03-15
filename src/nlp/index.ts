@@ -1,5 +1,6 @@
 import {Wit,log} from "node-wit"
-import "dotenv/config";
+import * as dotenv from "dotenv";
+dotenv.config()
 
 // const actions = {
 //   confirm_order(contextMap) {
@@ -8,7 +9,7 @@ import "dotenv/config";
 // };
 
 const ClientWit = new Wit({
-  accessToken: process.env.WITAI_CLIENT_ACCESS_TOKEN,
+  accessToken: (process.env.WITAI_CLIENT_ACCESS_TOKEN as string),
   // actions,
   logger: new log.Logger(log.DEBUG), // optional
 });

@@ -1,5 +1,5 @@
 import type {ContextApp} from 'chatbotwit'
-import ClientWit from '@nlp/index'
+// import ClientWit from '@nlp/index'
 
 async function  App(context:ContextApp):Promise<void>{
   //console.log(context.event);
