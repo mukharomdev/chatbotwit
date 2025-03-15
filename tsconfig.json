@@ -2,7 +2,7 @@
     "include": ["src/**/*"],
     "exclude": ["**/__tests__", "**/*.{spec,test}.ts"],
     "compilerOptions": {
-      "target": "es2016",
+      "target": "ES2022",
       "lib": ["es2017", "es2018", "es2019", "esnext.asynciterable"],
       "module": "commonjs",
       "skipLibCheck": true,
@@ -14,7 +14,12 @@
       "isolatedModules": true,
       "rootDir": "./src",
       "outDir": "./dist",
-      // "types": ["./types/*"],
-      "typeRoots": ["./node_modules/@types","./types"]
+      // "types": ["node", "dotenv"],
+      "typeRoots": ["./node_modules/@types","./types"],
+      "baseUrl": ".",
+      "paths": {
+          "@nlp/*": ["src/nlp/*"],
+          "@utils/*": ["src/utils/*"]
+      }
     }
   }
