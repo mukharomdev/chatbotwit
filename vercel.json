@@ -9,7 +9,7 @@
   "rewrites": [
     {
       "source": "/(.*)",
-      "dest": "dist/server.min.js"
+      "destination": "dist/server.min.js"
     }
   ],
   "env":{
