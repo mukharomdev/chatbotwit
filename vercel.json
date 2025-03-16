@@ -6,30 +6,10 @@
       "use": "@vercel/node"
     }
   ],
-  "headers": [
+  "routes": [
     {
-      "source": "/(.*).(js|css|png|jpg|jpeg|gif|ico|svg)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-		]
-},
-							{
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    }
-  ],
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "dist/server.min.js"
+      "src": "/(.*)",
+      "dest": "dist/server.min.js"
     }
   ],
   "env":{
