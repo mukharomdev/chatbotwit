@@ -5,8 +5,7 @@ async function  App(context:ContextApp):Promise<void>{
   
 try {
   if (context.event.isText){
-    console.log(ClientWit)
-    const userMessage = context.event.text;
+   const userMessage = context.event.text;
 
     // Kirim pesan ke Wit.ai untuk diproses
     const witResponse = await ClientWit.message(userMessage,{})
@@ -19,6 +18,10 @@ try {
       case 'greeting':
         await context.sendText('Halo! Ada yang bisa saya bantu?');
         break;
+      case 'order_pizza':
+        const pizza = entities['pizza_type:pizza_type']?.[0]?.value || 'unknown';
+        await context.sendText(`pesanan ${pizza} anda sedang disiapkan.`)
+        break ;
       case 'weather':
         const location = entities['location:location']?.[0]?.value || 'unknown';
         await context.sendText(`Cuaca di ${location} sedang cerah.`);

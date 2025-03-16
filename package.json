@@ -3,11 +3,12 @@
 	"version": "1.0.0",
 	"main": "src/index.ts",
 	"scripts": {
-		"build": "tsc && pnpm minify",
+		"build": "npx tsc && pnpm minify",
 		"minify": "npx terser dist/server.js --output dist/server.min.js && npx terser dist/index.js --output dist/index.min.js",
 		"dev": "bottender dev ",
 		"start-local": "bottender start",
-		"start": "cross-env NODE_ENV=production node dist/server.min.js"
+		"start": "cross-env NODE_ENV=production node dist/server.min.js",
+		"ngrok":"ngrok http 5000"
 	},
 	"dependencies": {
 		"body-parser": "^1.20.3",
