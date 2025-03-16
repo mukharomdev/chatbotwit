@@ -3,11 +3,14 @@ import * as dotenv from "dotenv";
 dotenv.config()
 
 /* Handle action for bot */
-const actions = {
-  confirm_order(contextMap:any) {
-    return {context_map: {...contextMap, order_confirmation: 'PIZZA42'}};
-  },
-};
+// const actions = {
+//   confirm_order(contextMap:any) {
+    
+//     return {context_map: {...contextMap, order_confirmation: 'PIZZA42'}};
+//   },
+// };
+const actions = {};
+
 
 // config wit client
 const WitConfig = {

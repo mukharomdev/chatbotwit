@@ -3,7 +3,7 @@
 	"version": "1.0.0",
 	"main": "src/index.ts",
 	"scripts": {
-		"build": "tsc",
+		"build": "tsc && pnpm minify",
 		"minify": "npx terser dist/server.js --output dist/server.min.js && npx terser dist/index.js --output dist/index.min.js",
 		"dev": "bottender dev ",
 		"start-local": "bottender start",
