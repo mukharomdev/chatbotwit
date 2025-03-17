@@ -6,9 +6,10 @@
 		"build": "npx tsc && pnpm minify",
 		"minify": "npx terser dist/server.js --output dist/server.min.js && npx terser dist/index.js --output dist/index.min.js",
 		"dev": "bottender dev ",
+		"log": "pnpm dev -- --console",
 		"start-local": "bottender start",
 		"start": "cross-env NODE_ENV=production node dist/server.min.js",
-		"ngrok":"ngrok http 5000"
+		"ngrok": "ngrok http 5000"
 	},
 	"dependencies": {
 		"body-parser": "^1.20.3",
@@ -25,6 +26,7 @@
 		"@types/node-wit": "^6.1.0",
 		"dotenv": "^16.4.7",
 		"ngrok": "5.0.0-beta.2",
+		"punycode": "^2.3.1",
 		"typescript": "^5.8.2",
 		"vercel": "^41.4.0"
 	}
