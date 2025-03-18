@@ -18,8 +18,8 @@
       "typeRoots": ["./node_modules/@types","./types"],
       "baseUrl": ".",
       "paths": {
-          "@nlp/*": ["src/nlp/*"],
-          "@utils/*": ["src/utils/*"]
+          "@/nlp/*": ["/src/nlp/*"],
+          "@/utils/*": ["/src/utils/*"]
       }
     }
   }
