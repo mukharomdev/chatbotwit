@@ -8,31 +8,56 @@ module.exports = {
         appId: process.env.MESSENGER_APP_ID,
         appSecret: process.env.MESSENGER_APP_SECRET,
         verifyToken: process.env.MESSENGER_VERIFY_TOKEN,
-      },
-      line: {
-        enabled: false,
-        path: '/webhooks/line',
-        accessToken: process.env.LINE_ACCESS_TOKEN,
-        channelSecret: process.env.LINE_CHANNEL_SECRET,
-      },
-      telegram: {
-        enabled: false,
-        path: '/webhooks/telegram',
-        accessToken: process.env.TELEGRAM_ACCESS_TOKEN,
-      },
-      slack: {
-        enabled: false,
-        path: '/webhooks/slack',
-        accessToken: process.env.SLACK_ACCESS_TOKEN,
-        verificationToken: process.env.SLACK_VERIFICATION_TOKEN,
-      },
-      viber: {
-        enabled: false,
-        path: '/webhooks/viber',
-        accessToken: process.env.VIBER_ACCESS_TOKEN,
-        sender: {
-          name: 'xxxx',
+
+        profile: {
+          greeting: [
+          {
+            locale: 'default',
+            text: 'Hello {{user_first_name}}! Welcome to My Bot',
+          },
+        ],
+
+        getStarted: {
+          payload: 'GET_STARTED',
         },
+
+        persistentMenu: [
+          {
+            locale: 'default',
+            composerInputDisabled: false,
+            callToActions: [
+              {
+                type: 'postback',
+                title: 'Ngobrol dengan Bot',
+                payload: 'CARE_HELP',
+              },
+              {
+                type: 'postback',
+                title: 'Hiburan',
+                payload: 'CURATION',
+              },
+              {
+                type: 'web_url',
+                title: 'klik blog saya',
+                url: 'https://mukharomdev.github.io',
+                webviewHeightRatio: 'full',
+              },
+            ],
+          },
+        ],
+
+        iceBreakers: [
+          {
+            question: '<QUESTION>',
+            payload: '<PAYLOAD>',
+          },
+          {
+            question: '<QUESTION>',
+            payload: '<PAYLOAD>',
+          },
+        ],
       },
-    },
-  };
+    
+    }  
+  }
+}

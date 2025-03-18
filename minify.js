@@ -4,7 +4,7 @@ const {minify} = require("terser")
 async function Minify(){
   var code = {
     "dist/server.js": "function add(first, second) { return first + second; }",
-    "file2.js": "console.log(add(1 + 2, 3 + 4));"
+    "dist/index.js": "console.log(add(1 + 2, 3 + 4));"
 };
 var options = {
     toplevel: true,
@@ -20,8 +20,7 @@ var options = {
 };
 var result = await minify(code, options);
 console.log(result.code);
-// /* minified */
-// alert(10);"
+
 }
 
 Minify()

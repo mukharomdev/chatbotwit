@@ -3,13 +3,15 @@
 	"version": "1.0.0",
 	"main": "src/index.ts",
 	"scripts": {
-		"build": "npx tsc && pnpm minify",
 		"minify": "npx terser dist/server.js --output dist/server.min.js && npx terser dist/index.js --output dist/index.min.js",
+		"build": "npx tsc && pnpm minify",
 		"dev": "bottender dev ",
 		"log": "pnpm dev -- --console",
 		"start-local": "bottender start",
 		"start": "cross-env NODE_ENV=production node dist/server.min.js",
-		"ngrok": "ngrok http 5000"
+		"ngrok": "ngrok http 5000",
+		"set-profil":"npx bottender messenger profile set",
+		"get-profil":"npx bottender messenger profile get"
 	},
 	"dependencies": {
 		"body-parser": "^1.20.3",
