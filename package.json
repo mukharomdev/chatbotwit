@@ -10,8 +10,8 @@
 		"start-local": "bottender start",
 		"start": "cross-env NODE_ENV=production node dist/server.min.js",
 		"ngrok": "ngrok http 5000",
-		"set-profil":"npx bottender messenger profile set",
-		"get-profil":"npx bottender messenger profile get"
+		"set-profil": "npx bottender messenger profile set",
+		"get-profil": "npx bottender messenger profile get"
 	},
 	"dependencies": {
 		"body-parser": "^1.20.3",
@@ -30,6 +30,6 @@
 		"ngrok": "5.0.0-beta.2",
 		"punycode": "^2.3.1",
 		"typescript": "^5.8.2",
-		"vercel": "^41.4.0"
+		"vercel": "^41.4.1"
 	}
 }

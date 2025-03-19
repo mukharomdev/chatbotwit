@@ -4,16 +4,18 @@ import { HandleMessage } from "./messenger"
 import {Message} from "./nlp"
 
 async function  App(context:ContextApp):Promise<void>{
+
+console.log(context.platform);
 try {
+
 	if(context.platform == "messenger"){
-	console.log(context.platform);
-    return router([
-    messenger.message(HandleMessage),
-    messenger.any(HandleMessage),
-  ]);
+						return router([
+				    messenger.message(HandleMessage),
+				    messenger.any(HandleMessage),
+				  ]);
 		  } else {
-		  	console.log(context.platform);
-		  	await Message(context)
+		  
+		  await Message(context)
 		  }
 		  
   } catch(error){
