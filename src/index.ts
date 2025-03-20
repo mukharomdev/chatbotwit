@@ -8,12 +8,14 @@ async function  App(context:ContextApp):Promise<void>{
 console.log(context.platform);
 try {
 
-	if(context.platform == "messenger"){
-						return router([
+	switch(context.platform){
+		case "messenger":
+			return router([
 				    messenger.message(HandleMessage),
 				    messenger.any(HandleMessage),
-				  ]);
-		  } else {
+				  ])
+		  break;
+default:
 		  
 		  await Message(context)
 		  }
