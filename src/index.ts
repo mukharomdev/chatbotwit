@@ -15,11 +15,9 @@ try {
 				    messenger.any(HandleMessage),
 				  ])
 		  break;
-default:
-		  
-		  await Message(context)
-		  }
-		  
+		  default:		  
+		  	await Message(context)
+  	}		  
   } catch(error){
     console.log("error",error);
   }

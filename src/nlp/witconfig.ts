@@ -20,7 +20,7 @@ const actions = {};
 const WitConfig = {
   accessToken: (process.env.WITAI_CLIENT_ACCESS_TOKEN as string),
   actions,
-  // logger: new log.Logger(log.DEBUG), // optional
+  logger: new log.Logger(log.DEBUG), // optional
 }
 
 // instance Wit

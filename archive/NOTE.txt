@@ -1,1 +1,1 @@
-npx bottender messenger webhook set https://95ae-23-97-62-134.ngrok-free.app/webhooks/messenger
+npx bottender messenger webhook set https://12e6-23-97-62-112.ngrok-free.app/webhooks/messenger

@@ -3,13 +3,14 @@
  */
 import type {ContextApp} from "chatbotwit"
 import ClientWit from "./witconfig"
-
+import contextMap from "./contextMap";
+import { WitContext } from "node-wit";
 export default async function Message(context:ContextApp){
 	if (context.event.isText){
    const userMessage = context.event.text;
-
+   const cMap:WitContext = {state:[JSON.stringify(contextMap)]}
     // Kirim pesan ke Wit.ai untuk diproses
-    const witResponse = await ClientWit.message(userMessage,{})
+    const witResponse = await ClientWit.message(userMessage,cMap)
 
     // Ambil intent dan entities dari respons Wit.ai
     const intent = witResponse.intents[0]?.name || 'unknown';
