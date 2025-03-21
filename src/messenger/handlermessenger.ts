@@ -3,6 +3,6 @@ import {Message,Converse} from "./../nlp"
 
 
 export async function HandleMessage(context:ContextApp) {
-  await Converse(context)
-  // hiawait Message(context)
+  
+  await Message(context)
 }

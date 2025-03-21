@@ -1,16 +1,15 @@
-/**
- * message
- */
 import type {ContextApp} from "chatbotwit"
 import ClientWit from "./witconfig"
-import contextMap from "./contextMap";
-import { WitContext } from "node-wit";
+import Converse from "./converse";
+import { log } from "console";
+
 export default async function Message(context:ContextApp){
 	if (context.event.isText){
    const userMessage = context.event.text;
-   const cMap:WitContext = {state:[JSON.stringify(contextMap)]}
+   let ctx = await Converse(context)
+   log(ctx)
     // Kirim pesan ke Wit.ai untuk diproses
-    const witResponse = await ClientWit.message(userMessage,cMap)
+    const witResponse = await ClientWit.message(userMessage,ctx)
 
     // Ambil intent dan entities dari respons Wit.ai
     const intent = witResponse.intents[0]?.name || 'unknown';
@@ -24,10 +23,6 @@ export default async function Message(context:ContextApp){
         const pizza = entities['pizza_type:pizza_type']?.[0]?.value || 'unknown';
         await context.sendText(`pesanan ${pizza} anda sedang disiapkan.`)
         break ;
-      case 'weather':
-        const location = entities['location:location']?.[0]?.value || 'unknown';
-        await context.sendText(`Cuaca di ${location} sedang cerah.`);
-        break;
       default:
         await context.sendText('Maaf, saya tidak mengerti maksud Anda.');
         break;
