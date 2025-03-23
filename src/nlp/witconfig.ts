@@ -20,8 +20,22 @@ const WitConfig = {
   // logger: new log.Logger(log.DEBUG), // optional
 }
 
+function WitClient(wit,config){
+  if(typeof wit != "function"){
+    throw new Error("Harus berupa class Wit")
+  }
+
+  if(typeof config != "object"){
+    throw new Error("harus berupa Object ")
+  }
+  const clientWit = new wit(config)
+
+  return clientWit
+}
+
+
 // instance Wit
-const ClientWit = new Wit(WitConfig);
+const ClientWit = WitClient(Wit,WitConfig);
 
 // console.log(client.message('set an alarm tomorrow at 7am'));
 
