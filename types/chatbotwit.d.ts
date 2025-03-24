@@ -10,8 +10,8 @@ declare module "node-wit"{
 }
 
 declare module "chatbotwit" {
-    export type ContextApp = ConsoleContext| MessengerContext  ;
-
+    export type ContextApp = ConsoleContext| MessengerContext ;
+    export type WitClient = any;
   }
 
 Wit.prototype.event = async function ():Promise<void>{

@@ -1,4 +1,4 @@
-import {Wit,log} from "node-wit"
+import {Wit,WitOption,log} from "node-wit"
 import ContextMAP from "./contextMap";
 import * as dotenv from "dotenv";
 dotenv.config()
@@ -20,7 +20,7 @@ const WitConfig = {
   // logger: new log.Logger(log.DEBUG), // optional
 }
 
-function WitClient(wit,config){
+function witClient(wit:typeof Wit,config:WitOption){
   if(typeof wit != "function"){
     throw new Error("Harus berupa class Wit")
   }
@@ -35,7 +35,7 @@ function WitClient(wit,config){
 
 
 // instance Wit
-const ClientWit = WitClient(Wit,WitConfig);
+const ClientWit = witClient(Wit,WitConfig);
 
 // console.log(client.message('set an alarm tomorrow at 7am'));
 
