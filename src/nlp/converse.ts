@@ -17,7 +17,7 @@ async function handleContextMap(intent:any,entity:any):Promise<any>{
     const entValue:any = arrayEntiti[0]
     
     let ctx = {
-        [intent[0].name]:entValue[0].name
+        [entValue[0].name]:entValue[0].value
     }
     // let context = JSON.stringify(ctx,null,2)
     let context = {...ctx}
