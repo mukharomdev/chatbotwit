@@ -8,12 +8,19 @@ import HandleEntity from "./entity"
 async function handleContextMap(intent:any,entity:any):Promise<any>{
      console.log("intent :",intent[0].name)
     //  console.log("entiti :",entity)
-     const entValue = Object.entries(entity)
+    let arrayEntiti:any = []
+     const objectEntiti = Object.entries(entity)[0].forEach(element => {
+         if(Array.isArray(element))arrayEntiti.push(element)
+        
+     });
+
+    const entValue:any = arrayEntiti[0]
+    
     let ctx = {
-        [intent[0].name]:entValue
+        [intent[0].name]:entValue[0].name
     }
     // let context = JSON.stringify(ctx,null,2)
-    let context = ctx
+    let context = {...ctx}
     return Promise.resolve(context)
 }
 
