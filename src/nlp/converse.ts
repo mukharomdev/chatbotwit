@@ -6,7 +6,7 @@ import HandleEntity from "./entity"
 
 
 async function handleContextMap(intent:any,entity:any):Promise<any>{
-     console.log("intent :",intent[0].name)
+    console.log("intent :",intent[0].name)
     //  console.log("entiti :",entity)
     let arrayEntiti:any = []
      const objectEntiti = Object.entries(entity)[0].forEach(element => {
@@ -35,8 +35,12 @@ async function process_message(clwit:WitClient,msg:string,ctx={}){
 export default async function Converse(context:ContextApp):Promise<any>{
     const messageText = context.event.text
     let contextText = {}
-         
-    contextText = await process_message(ClientWit,messageText,contextText)
+    try {
+        contextText = await process_message(ClientWit,messageText,contextText)
+    } catch(e:any){
+        throw new Error(e)
+    }
+    
     return Promise.resolve(contextText)
     
 }
